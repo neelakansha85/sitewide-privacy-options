@@ -550,7 +550,7 @@ function additional_privacy() {
         switch( $privacy ) {
             case '-1': {
                 if ( ! is_user_logged_in() ) {
-                    spo_redirect( site_url("wp-login.php?privacy=1&redirect_to=" . $_redirect_to, 'login_post' ) );
+                    spo_redirect( wp_login_url( get_permalink() ) );
                     exit();
                 }
                 break;
