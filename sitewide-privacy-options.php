@@ -557,7 +557,7 @@ function additional_privacy() {
             }
             case '-2': {
                 if ( ! is_user_logged_in() ) {
-                    spo_redirect( site_url("wp-login.php?privacy=2&redirect_to=" . $_redirect_to, 'login_post' ) );
+                    wp_redirect( wp_login_url( urldecode($_redirect_to) ), 302 );
                     exit();
                 } else {
                     if ( ! current_user_can( 'read' ) ) {
@@ -568,7 +568,7 @@ function additional_privacy() {
             }
             case '-3': {
                 if ( ! is_user_logged_in() ) {
-                    spo_redirect( site_url("wp-login.php?privacy=3&redirect_to=" . $_redirect_to, 'login_post' ) );
+                    wp_redirect( wp_login_url( urldecode($_redirect_to) ), 302 );
                     exit();
                 } else {
                     if ( ! current_user_can( 'manage_options' ) ) {
@@ -584,8 +584,8 @@ function additional_privacy() {
 
                 if ( !current_user_can( 'read' ) ) {
                     if ( !isset( $_COOKIE['spo_blog_access'] ) || $value != $_COOKIE['spo_blog_access'] ) {
-                        spo_redirect( site_url("wp-login.php?privacy=4&redirect_to=" . $_redirect_to, 'login_post' ) );
-                        exit();
+                        wp_redirect( wp_login_url( urldecode($_redirect_to) ), 302 );
+                    	exit();
                     }
                 }
                 break;
