@@ -6,6 +6,7 @@ Description: Adds more levels of privacy and allows you to control them across a
 Author: WPMU DEV
 Author URI: http://premium.wpmudev.org
 Version: 1.1.8.6
+NYU_Version: 1.0
 Network: true
 WDP ID: 52
 License: GNU General Public License (Version 2 - GPLv2)
